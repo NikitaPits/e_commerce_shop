@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBarTitle extends StatefulWidget {
-  const CustomAppBarTitle({super.key});
+  final String title;
+  const CustomAppBarTitle({super.key, required this.title});
 
   @override
   State<CustomAppBarTitle> createState() => _CustomAppBarTitleState();
@@ -10,6 +11,6 @@ class CustomAppBarTitle extends StatefulWidget {
 class _CustomAppBarTitleState extends State<CustomAppBarTitle> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Center(child: Text(widget.title));
   }
 }

@@ -1,4 +1,4 @@
-import 'package:e_commerce_shop/view/pages/home_page/home_page.dart';
+import 'package:e_commerce_shop/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'Flutter Demo',
-      home: HomePage(),
+      home: Home(),
     );
   }
 }
