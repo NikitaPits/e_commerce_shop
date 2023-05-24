@@ -1,5 +1,7 @@
+import 'package:e_commerce_shop/data/bloc/bloc/cart_bloc.dart';
 import 'package:e_commerce_shop/home.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,9 +13,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'Flutter Demo',
-      home: Home(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => CartBloc(),
+        ),
+      ],
+      child: const MaterialApp(
+        title: 'Flutter Demo',
+        home: Home(),
+      ),
     );
   }
 }

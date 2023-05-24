@@ -1,7 +1,7 @@
 import 'package:e_commerce_shop/theme/custom_colors.dart';
+import 'package:e_commerce_shop/view/pages/cart_page/cart_page.dart';
 import 'package:e_commerce_shop/view/pages/home_page/home_page.dart';
-import 'package:e_commerce_shop/view/pages/product_page/product_page.dart';
-import 'package:e_commerce_shop/view/pages/profile_page/profile_page';
+import 'package:e_commerce_shop/view/pages/profile_page/profile_page.dart';
 import 'package:e_commerce_shop/view/pages/search_page/search_page.dart';
 import 'package:flutter/material.dart';
 
@@ -31,7 +31,7 @@ class _HomeState extends State<Home> {
         children: [
           HomePage(pageController: _controller),
           const SearchPage(),
-          const ProductPage(),
+          const CartPage(),
           const ProfilePage(),
         ],
       ),

@@ -1,4 +1,5 @@
 import 'package:e_commerce_shop/data/models/product_model.dart';
+import 'package:e_commerce_shop/view/UI/product_card/product_card_full_widget.dart';
 import 'package:e_commerce_shop/view/UI/product_card/product_card_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -21,12 +22,15 @@ class ProductGallery extends StatelessWidget {
               border: Border.all(color: Colors.grey[300]!),
               borderRadius: BorderRadius.circular(8.0),
             ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                ProductCarousel(product: product),
-              ],
-            ),
+            child: GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return ProductCardPage(
+                      product: product,
+                    );
+                  }));
+                },
+                child: ProductCarousel(product: product)),
           );
         }).toList(),
       ),
