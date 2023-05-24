@@ -19,7 +19,10 @@ class _CartPageState extends State<CartPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: CustomColors.blue40,
-        title: const CustomAppBarTitle(title: 'Залишилось лише сплатити'),
+        title: const CustomAppBarTitle(
+          title: 'Залишилось лише сплатити',
+          showCartIcon: false,
+        ),
       ),
       body: BlocBuilder<CartBloc, List<Product>>(
         builder: (context, state) {
@@ -32,6 +35,14 @@ class _CartPageState extends State<CartPage> {
           }
         },
       ),
+      floatingActionButton:
+          BlocBuilder<CartBloc, List<Product>>(builder: (context, state) {
+        if (state.isNotEmpty) {
+          return Text('Сплатити \$${calculateTotalPrice(state).toString()}');
+        } else {
+          return const SizedBox();
+        }
+      }),
     );
   }
 
